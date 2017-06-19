@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import com.example.android.sunshine.data.SunshinePreferences;
 import com.example.android.sunshine.utilities.NetworkUtils;
 import com.example.android.sunshine.utilities.OpenWeatherJsonUtils;
 
@@ -55,10 +56,14 @@ public class MainActivity extends AppCompatActivity {
          * TextView. Later, we'll learn about a better way to display lists of data.
          */
         // TODO (9) Call loadWeatherData to perform the network request to get the weather
+        loadWeatherData();
     }
 
     // TODO (8) Create a method that will get the user's preferred location and execute your new AsyncTask and call it loadWeatherData
-
+    private void loadWeatherData(){
+        String location = SunshinePreferences.getPreferredWeatherLocation(this);
+        new NetworkRequests().execute(location);
+    }
 
     // TODO (5) Create a class that extends AsyncTask to perform network requests --> Completed
     public class NetworkRequests extends AsyncTask<String, Void, String[]> {
