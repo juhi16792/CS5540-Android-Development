@@ -20,6 +20,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import com.example.android.sunshine.utilities.NetworkUtils;
+import com.example.android.sunshine.utilities.OpenWeatherJsonUtils;
+
+import java.net.URL;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView mWeatherTextView;
@@ -61,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
         // TODO (6) Override the doInBackground method to perform your network requests --> Completed
         @Override
         protected String[] doInBackground(String... params) {
-
             //tasks to do here
             // 1. this process should work in background and get the weather data from the URL built from TODO (1)
             // 2. before starting this task complete TOOD (1) which is NetworkUtils
@@ -69,7 +73,24 @@ public class MainActivity extends AppCompatActivity {
             // 4. URL should be built with the location specified
             // 5. And then pass the JSON
             // 6. if params[0] is null then just return null
-            return null;
+            if(params.length==0){
+                return null;
+            }
+            String location = params[0];
+            URL builtURLFromLocation =  NetworkUtils.buildUrl(location);
+            try {
+                String weatherResponseInJSON = NetworkUtils
+                        .getResponseFromHttpUrl(builtURLFromLocation);
+
+                String[] weatherData = OpenWeatherJsonUtils
+                        .getSimpleWeatherStringsFromJson(MainActivity.this, weatherResponseInJSON);
+
+                return weatherData;
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
         }
 
         // TODO (7) Override the onPostExecute method to display the results of the network request
