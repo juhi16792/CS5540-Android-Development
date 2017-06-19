@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String[] weatherData){
             for(String data: weatherData){
-                mWeatherTextView.append(data);
+                mWeatherTextView.append(data+"\n\n\n");
             }
         }
     }
