@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         // TODO (37) Use findViewById to get a reference to the RecyclerView--> Completed
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_forecast);
 
-
+        mErrorMessageDisplay = (TextView) findViewById(R.id.tv_error_message_display);
         // COMPLETED (38) Create layoutManager, a LinearLayoutManager with VERTICAL orientation and shouldReverseLayout == false
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);

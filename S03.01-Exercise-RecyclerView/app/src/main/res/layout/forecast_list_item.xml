@@ -12,10 +12,10 @@
         android:textSize="22sp" />
 
 
-    <view
+    <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#dadada"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"></view>
+        android:layout_marginRight="8dp"/>
 </LinearLayout>
