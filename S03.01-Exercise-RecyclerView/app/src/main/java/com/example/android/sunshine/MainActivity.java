@@ -14,9 +14,12 @@
  * limitations under the License.
  */
 package com.example.android.sunshine;
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -69,26 +72,27 @@ public class MainActivity extends AppCompatActivity {
 
 
     // TODO (24) Override onCreateViewHolder --> Completed
-    // TODO (25) Within onCreateViewHolder, inflate the list item xml into a view
-    // TODO (26) Within onCreateViewHolder, return a new ForecastAdapterViewHolder with the above view passed in as a parameter
+    // TODO (25) Within onCreateViewHolder, inflate the list item xml into a view --> Completed
+    // TODO (26) Within onCreateViewHolder, return a new ForecastAdapterViewHolder with the above view passed in as a parameter --> Completed
 
-    // TODO (27) Override onBindViewHolder
-    // TODO (28) Set the text of the TextView to the weather for this list item's position
+    // TODO (27) Override onBindViewHolder --> Completed
+    // TODO (28) Set the text of the TextView to the weather for this list item's position --> Completed
 
-    // TODO (29) Override getItemCount
-    // TODO (30) Return 0 if mWeatherData is null, or the size of mWeatherData if it is not null
+    // TODO (29) Override getItemCount --> Completed
+    // TODO (30) Return 0 if mWeatherData is null, or the size of mWeatherData if it is not null --> Completed
 
-    // TODO (31) Create a setWeatherData method that saves the weatherData to mWeatherData
-    // TODO (32) After you save mWeatherData, call notifyDataSetChanged
+    // TODO (31) Create a setWeatherData method that saves the weatherData to mWeatherData --> Completed
+    // TODO (32) After you save mWeatherData, call notifyDataSetChanged --> Completed
     // Within ForecastAdapter.java /////////////////////////////////////////////////////////////////
 
 
-    // TODO (33) Delete mWeatherTextView
-    private TextView mWeatherTextView;
+    // TODO (33) Delete mWeatherTextView --> Completed
 
-    // TODO (34) Add a private RecyclerView variable called mRecyclerView
-    // TODO (35) Add a private ForecastAdapter variable called mForecastAdapter
 
+    // TODO (34) Add a private RecyclerView variable called mRecyclerView --> Completed
+    private RecyclerView mRecyclerView;
+    // TODO (35) Add a private ForecastAdapter variable called mForecastAdapter --> Completed
+    private ForecastAdapter mForecastAdapter;
     private TextView mErrorMessageDisplay;
     private ProgressBar mLoadingIndicator;
 
@@ -97,28 +101,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forecast);
 
-        // TODO (36) Delete the line where you get a reference to mWeatherTextView
+        // TODO (36) Delete the line where you get a reference to mWeatherTextView --> Completed
         /*
          * Using findViewById, we get a reference to our TextView from xml. This allows us to
          * do things like set the text of the TextView.
          */
-        mWeatherTextView = (TextView) findViewById(R.id.tv_weather_data);
 
-        // TODO (37) Use findViewById to get a reference to the RecyclerView
 
-        /* This TextView is used to display errors and will be hidden if there are no errors */
-        mErrorMessageDisplay = (TextView) findViewById(R.id.tv_error_message_display);
+        // TODO (37) Use findViewById to get a reference to the RecyclerView--> Completed
+        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_forecast);
 
-        // TODO (38) Create layoutManager, a LinearLayoutManager with VERTICAL orientation and shouldReverseLayout == false
 
-        // TODO (39) Set the layoutManager on mRecyclerView
+        // COMPLETED (38) Create layoutManager, a LinearLayoutManager with VERTICAL orientation and shouldReverseLayout == false
+        LinearLayoutManager layoutManager
+                = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        // TODO (39) Set the layoutManager on mRecyclerView --> Completed
+        mRecyclerView.setLayoutManager(layoutManager);
 
-        // TODO (40) Use setHasFixedSize(true) on mRecyclerView to designate that all items in the list will have the same size
 
-        // TODO (41) set mForecastAdapter equal to a new ForecastAdapter
 
-        // TODO (42) Use mRecyclerView.setAdapter and pass in mForecastAdapter
-
+        // TODO (40) Use setHasFixedSize(true) on mRecyclerView to designate that all items in the list will have the same size --> Completed
+        mRecyclerView.setHasFixedSize(true);
+        // TODO (41) set mForecastAdapter equal to a new ForecastAdapter --> Completed
+        mForecastAdapter = new ForecastAdapter();
+        // TODO (42) Use mRecyclerView.setAdapter and pass in mForecastAdapter --> Completed
+        mRecyclerView.setAdapter(mForecastAdapter);
         /*
          * The ProgressBar that will indicate to the user that we are loading data. It will be
          * hidden when no data is loading.
