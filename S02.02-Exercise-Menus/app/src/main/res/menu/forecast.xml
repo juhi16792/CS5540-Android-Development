@@ -25,6 +25,6 @@
     <item
         android:id="@+id/action_refresh"
         android:orderInCategory="1"
-        android:title="@string/action_refresh"
+        android:title="REFRESH"
         app:showAsAction="ifRoom"/>
 </menu>

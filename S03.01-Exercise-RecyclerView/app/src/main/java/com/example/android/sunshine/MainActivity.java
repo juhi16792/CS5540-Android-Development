@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 package com.example.android.sunshine;
-
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -34,42 +33,42 @@ import java.net.URL;
 public class MainActivity extends AppCompatActivity {
 
     // Within forecast_list_item.xml //////////////////////////////////////////////////////////////
-    // TODO (5) Add a layout for an item in the list called forecast_list_item.xml
-    // TODO (6) Make the root of the layout a vertical LinearLayout
-    // TODO (7) Set the width of the LinearLayout to match_parent and the height to wrap_content
+    // TODO (5) Add a layout for an item in the list called forecast_list_item.xml --> Completed
+    // TODO (6) Make the root of the layout a vertical LinearLayout --> Completed
+    // TODO (7) Set the width of the LinearLayout to match_parent and the height to wrap_content --> Completed
 
-    // TODO (8) Add a TextView with an id @+id/tv_weather_data
-    // TODO (9) Set the text size to 22sp
-    // TODO (10) Make the width and height wrap_content
-    // TODO (11) Give the TextView 16dp of padding
+    // TODO (8) Add a TextView with an id @+id/tv_weather_data --> Completed
+    // TODO (9) Set the text size to 22sp --> Completed
+    // TODO (10) Make the width and height wrap_content --> Completed
+    // TODO (11) Give the TextView 16dp of padding --> Completed
 
-    // TODO (12) Add a View to the layout with a width of match_parent and a height of 1dp
-    // TODO (13) Set the background color to #dadada
-    // TODO (14) Set the left and right margins to 8dp
+    // TODO (12) Add a View to the layout with a width of match_parent and a height of 1dp --> Completed
+    // TODO (13) Set the background color to #dadada --> Completed
+    // TODO (14) Set the left and right margins to 8dp --> Completed
     // Within forecast_list_item.xml //////////////////////////////////////////////////////////////
 
 
     // Within ForecastAdapter.java /////////////////////////////////////////////////////////////////
-    // TODO (15) Add a class file called ForecastAdapter
-    // TODO (22) Extend RecyclerView.Adapter<ForecastAdapter.ForecastAdapterViewHolder>
+    // TODO (15) Add a class file called ForecastAdapter --> Completed
+    // TODO (22) Extend RecyclerView.Adapter<ForecastAdapter.ForecastAdapterViewHolder> --> Completed
 
-    // TODO (23) Create a private string array called mWeatherData
+    // TODO (23) Create a private string array called mWeatherData --> Completed
 
-    // TODO (47) Create the default constructor (we will pass in parameters in a later lesson)
+    // TODO (47) Create the default constructor (we will pass in parameters in a later lesson) --> Completed
 
-    // TODO (16) Create a class within ForecastAdapter called ForecastAdapterViewHolder
-    // TODO (17) Extend RecyclerView.ViewHolder
+    // TODO (16) Create a class within ForecastAdapter called ForecastAdapterViewHolder --> Completed
+    // TODO (17) Extend RecyclerView.ViewHolder --> Completed
 
     // Within ForecastAdapterViewHolder ///////////////////////////////////////////////////////////
-    // TODO (18) Create a public final TextView variable called mWeatherTextView
+    // TODO (18) Create a public final TextView variable called mWeatherTextView --> Completed
 
-    // TODO (19) Create a constructor for this class that accepts a View as a parameter
-    // TODO (20) Call super(view) within the constructor for ForecastAdapterViewHolder
-    // TODO (21) Using view.findViewById, get a reference to this layout's TextView and save it to mWeatherTextView
+    // TODO (19) Create a constructor for this class that accepts a View as a parameter --> Completed
+    // TODO (20) Call super(view) within the constructor for ForecastAdapterViewHolder --> Completed
+    // TODO (21) Using view.findViewById, get a reference to this layout's TextView and save it to mWeatherTextView --> Completed
     // Within ForecastAdapterViewHolder ///////////////////////////////////////////////////////////
 
 
-    // TODO (24) Override onCreateViewHolder
+    // TODO (24) Override onCreateViewHolder --> Completed
     // TODO (25) Within onCreateViewHolder, inflate the list item xml into a view
     // TODO (26) Within onCreateViewHolder, return a new ForecastAdapterViewHolder with the above view passed in as a parameter
 
@@ -91,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
     // TODO (35) Add a private ForecastAdapter variable called mForecastAdapter
 
     private TextView mErrorMessageDisplay;
-
     private ProgressBar mLoadingIndicator;
 
     @Override
