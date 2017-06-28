@@ -225,7 +225,6 @@ public class MainActivity extends AppCompatActivity {
                  * the "\n\n\n" after the String is to give visual separation between each String in the
                  * TextView. Later, we'll learn about a better way to display lists of data.
                  */
-
                 mForecastAdapter.setWeatherData(weatherData);
 
             } else {
@@ -250,7 +249,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.action_refresh) {
             // TODO (46) Instead of setting the text to "", set the adapter to null before refreshing
-            mForecastAdapter = null;
+            mForecastAdapter.setWeatherData(null);
             loadWeatherData();
             return true;
         }
